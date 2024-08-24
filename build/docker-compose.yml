@@ -1,0 +1,14 @@
+services:
+  oracle:
+    platform: linux/amd64
+    build:
+      context: .
+    image: container-registry.oracle.com/database/free:latest
+    container_name: study-oracle-23c
+    restart: always
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PWD=oracle
+    stdin_open: true
+    tty: true
